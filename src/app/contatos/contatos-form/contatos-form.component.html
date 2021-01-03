@@ -1,0 +1,51 @@
+<h1 class="mt-4">Contato</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Cadastro</li>
+</ol>
+
+<div class="container">
+  <form #contatoForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-success" role="alert" *ngIf="success == true">
+          Cliente Salvo/Atualizado com sucesso!!!
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Id:</label>
+          <input type="text" class="form-control" disabled=true />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Nome: *</label>
+          <input type="text" class="form-control" [(ngModel)]="contato.nome" name="nome" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Sobrenome: *</label>
+          <input type="text" class="form-control" [(ngModel)]="contato.sobrenome"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-success" >
+          <i class="far fa-save"></i>
+          Salvar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
