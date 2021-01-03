@@ -12,6 +12,7 @@ export class ContatosFormComponent implements OnInit {
 
   contato: Contato;
   success: boolean = false;
+  errors: String[];
   isLoadingResults = false;
 
   constructor( private service: ContatosService ) {
@@ -32,8 +33,11 @@ export class ContatosFormComponent implements OnInit {
         console.log(res);
         this.success = true;
         this.isLoadingResults = false;
+        this.errors = null;
       }, err => {
-        console.log(err);
+        this.success = null;
+        console.log(err.error.errors);
+        this.errors = err.error.errors;
         this.isLoadingResults = false;
       });
   }

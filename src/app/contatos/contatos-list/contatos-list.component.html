@@ -1,0 +1,40 @@
+<h1 class="mt-4">Contato</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Consulta</li>
+</ol>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <button class="btn btn-warning" (click)="novoCadastro()">
+        <i class="fa fa-plus"></i>
+      </button>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-condensed table-hover">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Cpf</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contato of contatos">
+            <td>{{contato.id}}</td>
+            <td>{{contato.nome}}</td>
+            <td>{{contato.cpf}}</td>
+            <td>Visualizar</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
